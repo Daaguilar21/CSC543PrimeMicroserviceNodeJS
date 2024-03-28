@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="author" content="Diego Aguilar" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 1 - CSC543</title>
+
+
+</head>
+
+<style>
+</style>
+
+<body>
+
+<!-- Code below is basic javascript for prime function -->
+<!-- <div class="section slide level1" id="this">
+
+
+  <h1>Prime Number Generator - Basic JavaScript</h1>
+
+  <p>Enter a number:</p>
+  <input type="number" id="inputNumber">
+  <button onclick="generatePrimes()">Generate Primes</button>
+  
+  <div id="primeResults"></div>
+  
+  <script>
+  function prime_eratosthenes(n) {
+      const start_time = Date.now(); // Record the start time
+      const prime_list = [];
+      const non_prime_list = []; // Create an empty array to store non-prime numbers
+      
+      // Iterate through the numbers from 2 to 'n'
+      for (let i = 2; i <= n; i++) {
+          if (!non_prime_list.includes(i)) {
+              // If 'i' is not in the 'non_prime_list,' it's a prime number; add it to prime_list
+              prime_list.push(i);
+  
+              // Mark all multiples of 'i' as non-prime by adding them to 'non_prime_list'
+              for (let j = i * i; j <= n; j += i) {
+                  non_prime_list.push(j);
+              }
+          }
+      }
+      
+      const end_time = Date.now(); // Record the end time
+      const time_taken = (end_time - start_time) / 1000; // Convert milliseconds to seconds
+      return { primeList: prime_list, timeTaken: time_taken };
+  }
+  
+  function generatePrimes() {
+      const inputNumber = parseInt(document.getElementById('inputNumber').value);
+      const primeResultsDiv = document.getElementById('primeResults');
+      
+      if (isNaN(inputNumber) || inputNumber <= 1) {
+          primeResultsDiv.innerHTML = '<p>Please enter a valid number greater than 1.</p>';
+          return;
+      }
+  
+      const { primeList, timeTaken } = prime_eratosthenes(inputNumber);
+      
+      primeResultsDiv.innerHTML = `
+          <p>The highest prime number up to ${inputNumber} inclusive is: ${primeList[primeList.length - 1]}</p>
+          <p>Time taken to generate prime numbers up to ${inputNumber} inclusive: ${timeTaken} seconds</p>
+          <p>Here is a list of all Prime Numbers up to ${inputNumber} inclusive:</p>
+          <p>${primeList.join(', ')}</p>
+      `;
+  }
+  </script>
+
+</div> -->
+
+<div class="section slide level1" id="this">
+
+    <h1>Prime Number Generator - Node.js Code</h1>
+
+    <p>Enter a number:</p>
+    <input type="number" id="inputNumber">
+    <button id="generateButton">Generate Primes</button>
+  
+    <div id="primeResults"></div>
+    <script src="client.js"></script>
+
+
+</div>
+
+
+</body>
+</html>
